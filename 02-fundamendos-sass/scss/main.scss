@@ -1,19 +1,40 @@
-$primary-color:#FFEFE7;
-$secundary-color:#FFDAC6;
-$tertiary-color:#BABD8D;
-$primary-text-color:#7C6A0A;
-$font-stackl: 'IBM Plex Sans' , sans-serif;
+$primary-color: #ffefe7;
+$secundary-color: #ffdac6;
+$tertiary-color: #babd8d;
+$primary-text-color: #7c6a0a;
+$font-stackl: "IBM Plex Sans", sans-serif;
 
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: red;
+}
+
+body {
+    background-color: $primary-color;
+    font-family: $font-stackl;
 }
 
 nav {
-    width: 100%;
-    height: 300px;
+    color: $primary-text-color;
+    display: flex;
+    font-weight: bolder;
+    justify-content: space-between;
+    padding: 15px;
+    width: auto;
+    p {
+        font-size: 1.5em;
+        padding-left: 15px;
+        align-content: center;
+    }
+    .icons {
+        display: flex;
+        gap: 15px;
+        button {
+            background: none;
+            border-style: none;
+        }
+    }
 }
 
 main {
@@ -21,7 +42,7 @@ main {
 }
 
 footer {
-    $background: #FA9500;
+    $background: #fa9500;
     background-color: $background;
     width: 100%;
     height: 250px;
