@@ -3,6 +3,8 @@ $secundary-color: #ffdac6;
 $tertiary-color: #babd8d;
 $primary-text-color: #7c6a0a;
 $font-stackl: "IBM Plex Sans", sans-serif;
+$paragraph-size: 1.5em;
+$quaternary-color: #fa9500;
 
 * {
     margin: 0;
@@ -23,7 +25,7 @@ nav {
     padding: 15px;
     width: auto;
     p {
-        font-size: 1.5em;
+        font-size: $paragraph-size;
         padding-left: 15px;
         align-content: center;
     }
@@ -41,9 +43,51 @@ main {
     background-color: $primary-color;
 }
 
+article {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    color: $primary-text-color;
+    padding-left: 30px;
+    padding-right: 30px;
+    row-gap: 15px;
+
+    .impact-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 50px;
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            max-width: 40ch;
+            line-height: 1.4;
+            text-align: justify;
+            font-size: $paragraph-size;
+        }
+        button {
+            width: 12vw;
+            padding: 20px;
+            background-color: $quaternary-color;
+            border-style: none;
+            border-radius: 35px;
+            color: white;
+            font-size: 1em;
+            font-weight: bolder;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        border-radius: 19px;
+    }
+}
+
 footer {
-    $background: #fa9500;
-    background-color: $background;
+    background-color: $quaternary-color;
     width: 100%;
     height: 250px;
 }
