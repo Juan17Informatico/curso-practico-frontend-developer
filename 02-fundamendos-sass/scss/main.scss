@@ -6,6 +6,20 @@ $font-stackl: "IBM Plex Sans", sans-serif;
 $paragraph-size: 1.5em;
 $quaternary-color: #fa9500;
 
+@mixin flexCenter ($direction, $content: null, $align: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+
+@mixin buttonStyle {
+    button {
+        background: none;
+        border-style: none;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,9 +33,8 @@ body {
 
 nav {
     color: $primary-text-color;
-    display: flex;
+    @include flexCenter(row, space-between);
     font-weight: bolder;
-    justify-content: space-between;
     padding: 15px;
     width: auto;
     p {
@@ -32,10 +45,7 @@ nav {
     .icons {
         display: flex;
         gap: 15px;
-        button {
-            background: none;
-            border-style: none;
-        }
+        @include buttonStyle;
     }
 }
 
@@ -44,8 +54,7 @@ main {
 }
 
 article {
-    display: flex;
-    justify-content: space-between;
+    @include flexCenter(row, space-between);
     width: auto;
     color: $primary-text-color;
     padding-top: 90px;
@@ -54,8 +63,7 @@ article {
     row-gap: 15px;
 
     .impact-section {
-        display: flex;
-        flex-direction: column;
+        @include flexCenter(column);
         gap: 25px;
         padding-top: 50px;
         h1 {
@@ -68,12 +76,12 @@ article {
             text-align: justify;
             font-size: $paragraph-size;
         }
+        @include buttonStyle;
         button {
             width: 12vw;
             margin-top: 40px;
             padding: 20px;
             background-color: $quaternary-color;
-            border-style: none;
             border-radius: 35px;
             color: white;
             font-size: 1em;
@@ -106,11 +114,9 @@ section {
         }
 
         .card-section {
-            display: flex;
+            @include flexCenter(row, center, center);
             width: auto;
             height: auto;
-            justify-content: center;
-            align-items: center;
             column-gap: 200px;
             flex-wrap: wrap;
             row-gap: 80px;
@@ -149,6 +155,9 @@ section {
         .product-card {
             background-color: $tertiary-color;
             color: white;
+            .icon svg {
+                color: white!important;
+            }
         }
     }
 }
