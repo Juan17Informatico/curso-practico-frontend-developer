@@ -6,7 +6,7 @@ $font-stackl: "IBM Plex Sans", sans-serif;
 $paragraph-size: 1.5em;
 $quaternary-color: #fa9500;
 
-@mixin flexCenter ($direction, $content: null, $align: null) {
+@mixin flexCenter($direction, $content: null, $align: null) {
     display: flex;
     flex-direction: $direction;
     justify-content: $content;
@@ -156,9 +156,37 @@ section {
             background-color: $tertiary-color;
             color: white;
             .icon svg {
-                color: white!important;
+                color: white !important;
             }
         }
+    }
+}
+
+.about-us {
+    margin-bottom: 60px;
+
+    h2 {
+        margin-bottom: 60px;
+        font-weight: bolder;
+    }
+    .mision-section {
+        @include flexCenter(row, space-evenly, center);
+        .earth {
+            display: flex;
+            gap: 40px;
+            width: 30vw;
+            color: #E86424;
+            img {
+                object-fit: cover;
+            }
+            p {
+                text-align: center;
+                font-size: $paragraph-size;
+            }
+        }
+    }
+    .innovation {
+        @extend .earth;
     }
 }
 
